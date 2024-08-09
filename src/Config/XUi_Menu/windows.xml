@@ -1,0 +1,51 @@
+<immersive-loading-screens>
+    <setattribute xpath="//window[@name='progress']//panel/*" name="visible">false</setattribute>
+    <setattribute xpath="//window[@name='progress']//panel/*" name="force_hide">true</setattribute>
+
+    <setattribute xpath="//window[@name='loadingScreen']/rect[@name='tips_enabled']" name="visible">false
+    </setattribute>
+    <setattribute xpath="//window[@name='loadingScreen']/rect[@name='tips_enabled']" name="force_hide">true
+    </setattribute>
+
+    <!-- Switch loading screen to full Screen -->
+    <setattribute xpath="//window[@name='loadingScreen']/panel[@name='pnlBlack']/sprite[@name='blackback']"
+                  name="visible">false
+    </setattribute>
+    <setattribute xpath="//window[@name='loadingScreen']/panel[@name='pnlBlack']/sprite[@name='blackback']"
+                  name="force_hide">true
+    </setattribute>
+    <setattribute xpath="//window[@name='loadingScreen']/texture[@name='loading_image']/sprite[@name='blackback']"
+                  name="force_hide">true
+    </setattribute>
+    <remove xpath="//window[@name='loadingScreen']/texture[@name='loading_image']"/>
+    <append xpath="//window[@name='loadingScreen']">
+
+        <texture
+                depth="2"
+                color="[white]"
+                texture="{background_texture}"
+                name="loading_image"
+                original_aspect_ratio="false"
+                anchor_left="#cam,0,-5"
+                anchor_bottom="#cam,0,-5"
+                anchor_right="#cam,1,5"
+                anchor_top="#cam,1,5"
+        />
+    </append>
+
+
+
+
+    <!-- Remove bottom border -->
+    <setattribute xpath="//window[@name='loadingScreen']/sprite[@name='backgroundMain']" name="visible">false</setattribute>
+    <setattribute xpath="//window[@name='loadingScreen']/sprite[@name='backgroundMain']" name="force_hide">true</setattribute>
+
+
+    <setattribute xpath="//window[@name='loadingScreen']" name="browse_sound">''</setattribute>
+
+    <!-- Hide Spawn header -->
+    <removeattribute xpath="//window[@name='spawnselection']//rect/panel[@name='header']/label[@text_key='respawnTitleMessage']/@text_key"/>
+    <setattribute xpath="//window[@name='spawnselection']//rect/panel[@name='header']" name="visible">false</setattribute>
+    <setattribute xpath="//window[@name='spawnselection']/rect/panel[@name='header']" name="force_hide">true</setattribute>
+
+</immersive-loading-screens>
