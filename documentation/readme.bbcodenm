@@ -1,0 +1,25 @@
+[size=6]7 Days to Die Mod - Immersive Loading Screens[/size]
+[url=https://next.nexusmods.com/7daystodie/collections/epfqzi][img]https://img.shields.io/badge/Nexus%20Mods%20Collection-Immersive%20HUD%20-orange?style=flat-square&logo=spinrilla[/img][/url] [url=https://www.nexusmods.com/7daystodie/mods/5716][img]https://img.shields.io/badge/Nexus%20Mod-No%20GPS%20-orange?style=flat-square&logo=spinrilla[/img][/url] [url=https://github.com/rdok/7daystodie_mod_immersive_loading_screens][img]https://img.shields.io/badge/GitHub-Repository-green?style=flat-square&logo=github[/img][/url]
+
+[quote]
+Show immersive only info during loading time.
+[/quote]
+[url=https://www.nexusmods.com/7daystodie/mods/5716][img]https://raw.githubusercontent.com/rdok/7daystodie_mod_immersive_loading_screens/main/documentation/showcase.jpg[/img][/url]
+
+[list]
+[*] 7daystodie Version: 1.0 (b333)
+[*] Install with [url=https://www.nexusmods.com/about/vortex/]Vortex[/url].
+[/list]
+[size=5]Features[/size]
+[list]
+[*] Remove tips; silenced click sound
+[*] Remove mouse icons
+[*] Use background the image from main menu, with log removed, and applied vignette with sand color
+[*] Removed spawn header panel
+[*] Changed & translated 'Spawn' button to 'Wake up'
+[/list]
+[size=4]Modding Sources[/size]
+[list]
+[*] [url=https://www.nexusmods.com/7daystodie/mods/870]AGF - V1.0 - HUD PLUS[/url] for a mod template
+[*] [url=https://7daystodie.fandom.com/wiki/Basic_Modding_Tutorial_1]Basic_Modding_Tutorial_1[/url] to confirm the required mod fields.
+[/list]
