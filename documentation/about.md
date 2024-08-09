@@ -17,5 +17,8 @@
 - Changed & translated 'Building environment...' button to "You're awake"
 - Changed the initial loading screen various in game loading messages to a more immersive one: In a world gone silent only the strong endure.
 
+## Backlog
+- Instead of hiding the loading messages of second loading screen, replace them with additional immersive messages. Similar to what was done with the first loading screen.
+ 
 ## Development
 - Use Google Sheet to edit the Localization.txt
