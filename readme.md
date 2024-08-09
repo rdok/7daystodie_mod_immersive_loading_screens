@@ -9,6 +9,8 @@
 - 7daystodie Version: 1.0 (b333)
 - Install with [Vortex](https://www.nexusmods.com/about/vortex/).
 
+## v1.0.1 09-Aug-24
+- fix: loading_image wasn't properly hidden leading to XML errors; although it hadn't any negative user impact.
 ## v1.0.0 09-Aug-24
 - Hides tips; silenced click sound, mouse icons, and spawn header panel.
 - Replaces the main loading screen with the main image, logo removed, vignette, vintaged.

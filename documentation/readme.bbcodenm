@@ -10,6 +10,9 @@ Eliminate immersion-breaking elements on loading screens.
 [*] 7daystodie Version: 1.0 (b333)
 [*] Install with [url=https://www.nexusmods.com/about/vortex/]Vortex[/url].
 [/list]
+[size=5]v1.0.1 09-Aug-24[/size]
+[list]
+[*] fix: loading_image wasn't properly hidden leading to XML errors; although it hadn't any negative user impact.[/list]
 [size=5]v1.0.0 09-Aug-24[/size]
 [list]
 [*] Hides tips; silenced click sound, mouse icons, and spawn header panel.

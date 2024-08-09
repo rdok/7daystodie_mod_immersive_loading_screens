@@ -14,9 +14,14 @@
     <setattribute xpath="//window[@name='loadingScreen']/panel[@name='pnlBlack']/sprite[@name='blackback']"
                   name="force_hide">true
     </setattribute>
-    <setattribute xpath="//window[@name='loadingScreen']/texture[@name='loading_image']/sprite[@name='blackback']"
+
+    <setattribute xpath="//window[@name='loadingScreen']/texture[@name='loading_image']"
+                  name="visible">false
+    </setattribute>
+    <setattribute xpath="//window[@name='loadingScreen']/texture[@name='loading_image']"
                   name="force_hide">true
     </setattribute>
+
     <remove xpath="//window[@name='loadingScreen']/texture[@name='loading_image']"/>
     <append xpath="//window[@name='loadingScreen']">
 
@@ -34,18 +39,21 @@
     </append>
 
 
-
-
     <!-- Remove bottom border -->
-    <setattribute xpath="//window[@name='loadingScreen']/sprite[@name='backgroundMain']" name="visible">false</setattribute>
-    <setattribute xpath="//window[@name='loadingScreen']/sprite[@name='backgroundMain']" name="force_hide">true</setattribute>
+    <setattribute xpath="//window[@name='loadingScreen']/sprite[@name='backgroundMain']" name="visible">false
+    </setattribute>
+    <setattribute xpath="//window[@name='loadingScreen']/sprite[@name='backgroundMain']" name="force_hide">true
+    </setattribute>
 
 
     <setattribute xpath="//window[@name='loadingScreen']" name="browse_sound">''</setattribute>
 
     <!-- Hide Spawn header -->
-    <removeattribute xpath="//window[@name='spawnselection']//rect/panel[@name='header']/label[@text_key='respawnTitleMessage']/@text_key"/>
-    <setattribute xpath="//window[@name='spawnselection']//rect/panel[@name='header']" name="visible">false</setattribute>
-    <setattribute xpath="//window[@name='spawnselection']/rect/panel[@name='header']" name="force_hide">true</setattribute>
+    <removeattribute
+            xpath="//window[@name='spawnselection']//rect/panel[@name='header']/label[@text_key='respawnTitleMessage']/@text_key"/>
+    <setattribute xpath="//window[@name='spawnselection']//rect/panel[@name='header']" name="visible">false
+    </setattribute>
+    <setattribute xpath="//window[@name='spawnselection']/rect/panel[@name='header']" name="force_hide">true
+    </setattribute>
 
 </immersive-loading-screens>
