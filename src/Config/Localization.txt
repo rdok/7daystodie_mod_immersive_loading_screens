@@ -1,0 +1,4 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+lblSpawn,UI,Spawn Menu,,,Open Your Eyes,,Öffne deine Augen,Abre tus ojos,Ouvre les yeux,Apri gli occhi,目を開けて,눈을 뜨세요,Otwórz oczy,Abra seus olhos,Открой глаза,Gözlerini aç,睁开眼睛,睜開你的眼睛
+msgBuildingEnvironment,UI,Menu,x,,You're awake,,Du bist wach,Estás despierto,Tu es éveillé,Sei sveglio,目覚めたね,당신은 깨어있다,Już nie śpisz,Você está acordado,Ты проснулся,Uyanıksın,你醒了,你醒了
+
