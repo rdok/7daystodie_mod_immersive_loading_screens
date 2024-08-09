@@ -9,6 +9,7 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "7z-bin": "Nexus-Mods/7z-bin",
+    "canvas": "^2.11.2",
     "npm-check": "^6.0.1",
     "prettier": "^3.3.3"
   },
@@ -18,7 +19,8 @@
     "prettier:fix": "prettier --write .",
     "update:dependencies": "npm-check -u",
     "generate_readme": "node scripts/generate_readme.js",
-    "generate_readme:watch": "nodemon --watch documentation -e md scripts/generate_readme.js"
+    "generate_readme:watch": "nodemon --watch documentation -e md scripts/generate_readme.js",
+    "vignette": "node scripts/vignette.js"
   },
   "engines": {
     "node": "20"
