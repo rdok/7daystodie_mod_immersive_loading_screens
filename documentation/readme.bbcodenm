@@ -2,7 +2,7 @@
 [url=https://next.nexusmods.com/7daystodie/collections/epfqzi][img]https://img.shields.io/badge/Nexus%20Mods%20Collection-Immersive%20HUD%20-orange?style=flat-square&logo=spinrilla[/img][/url] [url=https://www.nexusmods.com/7daystodie/mods/5716][img]https://img.shields.io/badge/Nexus%20Mod-No%20GPS%20-orange?style=flat-square&logo=spinrilla[/img][/url] [url=https://github.com/rdok/7daystodie_mod_immersive_loading_screens][img]https://img.shields.io/badge/GitHub-Repository-green?style=flat-square&logo=github[/img][/url]
 
 [quote]
-Show immersive only info during loading time.
+Eliminate immersion-breaking elements on loading screens.
 [/quote]
 [url=https://www.nexusmods.com/7daystodie/mods/5716][img]https://raw.githubusercontent.com/rdok/7daystodie_mod_immersive_loading_screens/main/documentation/showcase.jpg[/img][/url]
 
@@ -16,10 +16,11 @@ Show immersive only info during loading time.
 [*] Remove mouse icons
 [*] Use background the image from main menu, with log removed, and applied vignette with sand color
 [*] Removed spawn header panel
-[*] Changed & translated 'Spawn' button to 'Wake up'
+[*] Changed & translated 'Spawn' button to 'Open Your Eyes'
+[*] Changed & translated 'Building environment...' button to "You're awake"
+[*] Changed the initial loading screen various in game loading messages to a more immersive one: In a world gone silent only the strong endure.
 [/list]
-[size=4]Modding Sources[/size]
+[size=5]Development[/size]
 [list]
-[*] [url=https://www.nexusmods.com/7daystodie/mods/870]AGF - V1.0 - HUD PLUS[/url] for a mod template
-[*] [url=https://7daystodie.fandom.com/wiki/Basic_Modding_Tutorial_1]Basic_Modding_Tutorial_1[/url] to confirm the required mod fields.
+[*] Use Google Sheet to edit the Localization.txt
 [/list]

@@ -15,3 +15,7 @@
 - Removed spawn header panel
 - Changed & translated 'Spawn' button to 'Open Your Eyes'
 - Changed & translated 'Building environment...' button to "You're awake"
+- Changed the initial loading screen various in game loading messages to a more immersive one: In a world gone silent only the strong endure.
+
+## Development
+- Use Google Sheet to edit the Localization.txt
