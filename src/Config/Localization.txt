@@ -6,8 +6,7 @@ loadActionBlockTextures,UI,Load Actions,x,,.,,.,.,.,.,.,.,.,.,.,.,.,.
 loadActionCharacterModels,UI,Load Actions,x,,.,,.,.,.,.,.,.,.,.,.,.,.,.
 loadActionDone,UI,Load Actions,x,,.,,.,.,.,.,.,.,.,.,.,.,.,.
 loadActionItems,UI,Load Actions,x,,.,,.,.,.,.,.,.,.,.,.,.,.,.
-loadActionLoading,UI,Load Actions,x,,In a world gone silent only the strong endure,,Lade …,Cargando,Chargement,Caricamento,読み込み中：,로드 중...,Ładowanie,Carregando,Загрузка,Yükleniyor,正在载入,正在載入
+loadActionLoading,UI,Load Actions,x,,"In a world gone silent, only the strong endure",,"In einer Welt, in der es still ist, überleben nur die Starken","En un mundo en silencio, sólo los fuertes perduran","Dans un monde devenu silencieux, seuls les forts perdurent","In un mondo diventato silenzioso, solo i forti resistono",沈黙した世界では、強い者だけが耐える,침묵이 깃든 세상에서는 강한 자만이 살아남는다,"W świecie, w którym zapadła cisza, przetrwają tylko najsilniejsi","Em um mundo em silêncio, apenas os fortes perduram","В мире, где все затихло, выживают только сильные.","Sessizliğe gömülmüş bir dünyada, yalnızca güçlüler dayanır",在一个沉默的世界里，只有强者才能生存,寂靜的世界，只有強者才能堅持下去
 loadActionMaterials,UI,Load Actions,x,,.,,.,.,.,.,.,.,.,.,.,.,.,.
 loadActionParticles,UI,Load Actions,x,,.,,.,.,.,.,.,.,.,.,.,.,.,.
 loadActionTerrainTextures,UI,Load Actions,x,,.,,.,.,.,.,.,.,.,.,.,.,.,.
-
