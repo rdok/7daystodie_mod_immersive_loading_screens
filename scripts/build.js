@@ -1,7 +1,6 @@
 const { readFileSync, unlinkSync, mkdirSync, cpSync } = require("fs");
 const { join } = require("path");
 const { execSync } = require("child_process");
-require("dotenv").config();
 
 const packageJsonPath = join(__dirname, "..", "package.json");
 const packageJsonRaw = readFileSync(packageJsonPath, "utf8");
