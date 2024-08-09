@@ -10,16 +10,16 @@ Eliminate immersion-breaking elements on loading screens.
 [*] 7daystodie Version: 1.0 (b333)
 [*] Install with [url=https://www.nexusmods.com/about/vortex/]Vortex[/url].
 [/list]
-[size=5]Features[/size]
+[size=5]v1.0.0 09-Aug-24[/size]
 [list]
-[*] Hide tips; silenced click sound
-[*] Hide mouse icons
-[*] Use background the image from main menu, with log removed, and applied vignette with sand color.
-[*] Removed spawn header panel.
-[*] Changed & translated 'Spawn' button to 'Open Your Eyes'
-[*] Changed & translated 'Building environment...' button to "You're awake"
-[*] Changed the initial loading screen various in game loading messages to a more immersive one: 'In a world gone silent only the strong endure.'
-[*] Translated to all languages in game.
+[*] Hides tips; silenced click sound, mouse icons, and spawn header panel.
+[*] Replaces the main loading screen with the main image, logo removed, vignette, vintaged.
+[*] Changes & translates:
+[list]
+[*] 'Spawn' button to 'Open Your Eyes'
+[*] 'Building environment...' button to "You're awake"[/list]
+[*] First loading screen message: 'In a world gone silent only the strong endure.'
+[*] Translates to all languages in game.
 [/list]
 [size=5]Backlog[/size]
 [list]
