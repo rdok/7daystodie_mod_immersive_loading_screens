@@ -1,5 +1,5 @@
 [size=6]7 Days to Die Mod - Immersive Loading Screens[/size]
-[url=https://next.nexusmods.com/7daystodie/collections/epfqzi][img]https://img.shields.io/badge/Nexus%20Mods%20Collection-Immersive%20HUD%20-orange?style=flat-square&logo=spinrilla[/img][/url] [url=https://www.nexusmods.com/7daystodie/mods/5716][img]https://img.shields.io/badge/Nexus%20Mod-No%20GPS%20-orange?style=flat-square&logo=spinrilla[/img][/url] [url=https://github.com/rdok/7daystodie_mod_immersive_loading_screens][img]https://img.shields.io/badge/GitHub-Repository-green?style=flat-square&logo=github[/img][/url]
+[url=https://next.nexusmods.com/7daystodie/collections/epfqzi][img]https://img.shields.io/badge/Nexus%20Mods%20Collection-Immersive%20HUD%20-orange?style=flat-square&logo=spinrilla[/img][/url] [url=https://www.nexusmods.com/7daystodie/mods/5716][img]https://img.shields.io/badge/Nexus%20Mod-Immersive%20Loading%20Screens%20-orange?style=flat-square&logo=spinrilla[/img][/url] [url=https://github.com/rdok/7daystodie_mod_immersive_loading_screens][img]https://img.shields.io/badge/GitHub-Repository-green?style=flat-square&logo=github[/img][/url]
 
 [quote]
 Eliminate immersion-breaking elements on loading screens.
@@ -12,13 +12,17 @@ Eliminate immersion-breaking elements on loading screens.
 [/list]
 [size=5]Features[/size]
 [list]
-[*] Remove tips; silenced click sound
-[*] Remove mouse icons
-[*] Use background the image from main menu, with log removed, and applied vignette with sand color
-[*] Removed spawn header panel
+[*] Hide tips; silenced click sound
+[*] Hide mouse icons
+[*] Use background the image from main menu, with log removed, and applied vignette with sand color.
+[*] Removed spawn header panel.
 [*] Changed & translated 'Spawn' button to 'Open Your Eyes'
 [*] Changed & translated 'Building environment...' button to "You're awake"
-[*] Changed the initial loading screen various in game loading messages to a more immersive one: In a world gone silent only the strong endure.
+[*] Changed the initial loading screen various in game loading messages to a more immersive one: 'In a world gone silent only the strong endure.'
+[/list]
+[size=5]Backlog[/size]
+[list]
+[*] Instead of hiding the loading messages of second loading screen, replace them with additional immersive messages. Similar to what was done with the first loading screen.
 [/list]
 [size=5]Development[/size]
 [list]
