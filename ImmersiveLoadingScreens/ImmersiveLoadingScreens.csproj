@@ -41,6 +41,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Harmony\Logger.cs"/>
+        <Compile Include="Harmony\Main.cs"/>
+        <Compile Include="Harmony\DisableTipsCycle.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
 
@@ -56,6 +59,26 @@
         </Content>
     </ItemGroup>
 
+    <ItemGroup>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>..\..\..\..\Steam\steamapps\common\7 Days To Die\7DaysToDie_Data\Managed\Assembly-CSharp.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="0Harmony">
+            <HintPath>..\..\..\..\Steam\steamapps\common\7 Days To Die\Mods\0_TFP_Harmony\0Harmony.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>..\..\..\..\Steam\steamapps\common\7 Days To Die\7DaysToDie_Data\Managed\Assembly-CSharp.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="LogLibrary">
+            <HintPath>..\..\..\..\Steam\steamapps\common\7 Days To Die\7DaysToDie_Data\Managed\LogLibrary.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 
     <Target Name="AfterBuild">
@@ -86,10 +109,6 @@
                 WorkingDirectory="$(MSBuildProjectDirectory)\.."
         />
         <Exec Command="npm run generate_readme" WorkingDirectory="$(MSBuildProjectDirectory)\.."/>
-
-        <!-- Delete the DLL and PDB for XML only mods -->
-        <Delete Files="$(OutputPath)$(AssemblyName).dll" />
-        <Delete Files="$(OutputPath)$(AssemblyName).dll" /> 
     </Target>
 
 </Project>

@@ -7,7 +7,7 @@
     <set xpath="/doc/backgrounds/tex[4]/@file">@modfolder:Textures/main_menu_cleaned_full_vignette.jpg</set>
 
     <remove xpath="/doc/tips"/>
-    <append xpath="/doc" >
+    <append xpath="/doc">
         <tips>
             <tip key="loading_screen_lore_friendly_my_god_forgive_us"/>
             <tip key="loading_screen_lore_friendly_virus_decimates_america"/>
