@@ -3,8 +3,8 @@
 
     <set xpath="/doc/backgrounds/tex[1]/@file">@modfolder:Textures/main_menu_cleaned_full_vignette.jpg</set>
     <set xpath="/doc/backgrounds/tex[2]/@file">@modfolder:Textures/main_menu_cleaned_full_vignette.jpg</set>
-    <set xpath="/doc/backgrounds/tex[3]/@file">@modfolder:Textures/main_menu_cleaned_full_vignette.jpg</set>
-    <set xpath="/doc/backgrounds/tex[4]/@file">@modfolder:Textures/main_menu_cleaned_full_vignette.jpg</set>
+    <set xpath="/doc/backgrounds/tex[3]/@file">@modfolder:Textures/main_menu_cleaned_full.jpg</set>
+    <set xpath="/doc/backgrounds/tex[4]/@file">@modfolder:Textures/main_menu_cleaned_full.jpg</set>
 
     <remove xpath="/doc/tips"/>
     <append xpath="/doc">

@@ -41,6 +41,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Harmony\CycleBackground.cs" />
         <Compile Include="Harmony\Logger.cs"/>
         <Compile Include="Harmony\Main.cs"/>
         <Compile Include="Harmony\DisableTipsCycle.cs" />
