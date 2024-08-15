@@ -34,10 +34,10 @@
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>3</WarningLevel>
+        <OutputPath>bin\Main\</OutputPath>
         <AbsoluteOutputPath>$(MSBuildProjectDirectory)\$(OutputPath)</AbsoluteOutputPath>
         <ModVersion>1.1.0</ModVersion>
-        <ModName>ImmersiveLoadingScreensLight</ModName>
-      <OutputPath>bin\Main\</OutputPath>
+        <ModName>ImmersiveLoadingScreens</ModName>
     </PropertyGroup>
 
     <ItemGroup>
@@ -54,10 +54,6 @@
         <Content Include="ModInfo.xml">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Config\XUi\" />
     </ItemGroup>
 
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
@@ -92,15 +88,8 @@
         <Exec Command="npm run generate_readme" WorkingDirectory="$(MSBuildProjectDirectory)\.."/>
 
         <!-- Delete the DLL and PDB for XML only mods -->
-        <Delete Files="$(OutputPath)$(AssemblyName).dll" Condition="$(CompileCount) &lt;= 2"/>
-        <Delete Files="$(OutputPath)$(AssemblyName).dll" Condition="$(CompileCount) &lt;= 2"/>
-    </Target>
-
-
-    <Target Name="CheckForSourceFiles" BeforeTargets="CoreCompile">
-        <PropertyGroup>
-            <CompileCount>@(Compile->Count())</CompileCount>
-        </PropertyGroup>
+        <Delete Files="$(OutputPath)$(AssemblyName).dll" />
+        <Delete Files="$(OutputPath)$(AssemblyName).dll" /> 
     </Target>
 
 </Project>
