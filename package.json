@@ -4,14 +4,11 @@
     "url": "https://github.com/rdok/7daystodie_mod_immersive_loading_screens"
   },
   "author": "Rizart Dokollari",
-  "name": "7daystodie_mod_immersive_loading_screens",
   "license": "GPL-3.0",
   "devDependencies": {
     "7z-bin": "Nexus-Mods/7z-bin",
     "canvas": "^2.11.2",
-    "npm-check": "^6.0.1",
-    "xmldom": "^0.6.0",
-    "xpath": "^0.0.34"
+    "npm-check": "^6.0.1"
   },
   "scripts": {
     "build": "node scripts/build.js",

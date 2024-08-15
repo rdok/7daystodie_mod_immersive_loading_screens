@@ -1,37 +1,38 @@
-const { readFileSync, unlinkSync, mkdirSync, cpSync, rmSync } = require("fs");
-const { join } = require("path");
-const { execSync } = require("child_process");
-const { DOMParser } = require('xmldom');
-const xpath = require('xpath');
+const {unlinkSync, rmSync, cpSync} = require("fs");
+const {join} = require("path");
+const {execSync} = require("child_process");
 
-const xmlFilePath = join(__dirname, "../src/", "ModInfo.xml");
-const xmlRaw = readFileSync(xmlFilePath, "utf8");
-const doc = new DOMParser().parseFromString(xmlRaw, 'text/xml');
-const versionNode = xpath.select1("/xml/Version/@value", doc);
-const modNameNode = xpath.select1("/xml/Name/@value", doc);
+const args = process.argv.slice(2);
+if (args.length < 2) {
+    console.error("Usage: node script.js <absoluteOutputPath> <modName> <modVersion>");
+    process.exit(1);
+}
 
-const version = versionNode.value;
-const modName = modNameNode.value;
+console.debug(args);
+const absoluteOutputPath = args[0];
+const newModName = args[1];
+const newVersion = args[2];
 
-const artifact = `${modName}_${version}.7z`;
+const artifact = `${newModName}_${newVersion}.7z`;
 const distDir = join(__dirname, "..", "dist");
+const buildDir = join(distDir, newModName);
 
 try {
-  rmSync(distDir, {recursive: true});
+    unlinkSync(artifact);
 } catch (e) {
-  // directory does not exist
+    // Expected behavior if it doesn't exist.
 }
 
 try {
-  unlinkSync(artifact);
+    rmSync(distDir, {recursive: true});
 } catch (e) {
+    // Expected behavior if it doesn't exist.
 }
 
-const modDistDir = join(distDir, modName);
-const srcDir = join(__dirname, "..", "src");
+cpSync(absoluteOutputPath, buildDir, {recursive: true});
 
-mkdirSync(modDistDir, { recursive: true });
+execSync(
+    `.\\node_modules\\7z-bin\\win32\\7z.exe a "${artifact}" "${buildDir}"`
+);
 
-cpSync(srcDir, modDistDir, { recursive: true });
-
-execSync(`.\\node_modules\\7z-bin\\win32\\7z.exe a "${artifact}" "${modDistDir}"`);
+console.log(`Build completed: ${artifact}`);
