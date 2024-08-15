@@ -6,9 +6,15 @@
  
 [![Immersive Loading Screens](https://raw.githubusercontent.com/rdok/7daystodie_mod_immersive_loading_screens/main/documentation/showcase.gif)](https://www.nexusmods.com/7daystodie/mods/5716)
 
-- 7daystodie Version: 1.0 (b333)
-- Install with [Vortex](https://www.nexusmods.com/about/vortex/).
+## Features
+- Eliminate immersion-breaking elements on loading screens.
+- Replace tips with lore-friendly messages that include snippets of the storyline.
+- Game Version: 1.0. Install with [Vortex](https://www.nexusmods.com/about/vortex/).
 
+## v1.1.0 15-Aug-24
+- Replace starting loading screen with: "War. War never changes."
+- Enables tips, and replace them with lore-friendly messages that include snippets of the storyline.
+- Translated to all in game languages.
 ## v1.0.1 09-Aug-24
 - fix: loading_image wasn't properly hidden leading to XML errors; although it hadn't any negative user impact.
 ## v1.0.0 09-Aug-24
