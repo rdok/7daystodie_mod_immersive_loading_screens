@@ -2,11 +2,6 @@
     <setattribute xpath="//window[@name='progress']//panel/*" name="visible">false</setattribute>
     <setattribute xpath="//window[@name='progress']//panel/*" name="force_hide">true</setattribute>
 
-    <setattribute xpath="//window[@name='loadingScreen']/rect[@name='tips_enabled']" name="visible">false
-    </setattribute>
-    <setattribute xpath="//window[@name='loadingScreen']/rect[@name='tips_enabled']" name="force_hide">true
-    </setattribute>
-
     <!-- Switch loading screen to full Screen -->
     <setattribute xpath="//window[@name='loadingScreen']/panel[@name='pnlBlack']/sprite[@name='blackback']"
                   name="visible">false
