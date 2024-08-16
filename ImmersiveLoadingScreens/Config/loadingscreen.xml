@@ -6,7 +6,7 @@
     <set xpath="/doc/backgrounds/tex[3]/@file">@modfolder:Textures/house.jpg</set>
     <set xpath="/doc/backgrounds/tex[4]/@file">@modfolder:Textures/main_menu.jpg</set>
     <set xpath="/doc/backgrounds/tex[5]/@file">@modfolder:Textures/zombie_scene_attack.jpg</set>
-    
+
 
     <remove xpath="/doc/tips"/>
     <append xpath="/doc">
@@ -16,7 +16,8 @@
             <tip key="loading_screen_lore_friendly_the_fall_of_humanity"/>
             <tip key="loading_screen_lore_friendly_origins_of_the_outbreak"/>
             <tip key="loading_screen_lore_friendly_navezgane_dark_secret"/>
-            
+            <tip key="loading_screen_lore_friendly_seven_days_to_die"/>
+
         </tips>
     </append>
 </doc>

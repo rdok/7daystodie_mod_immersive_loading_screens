@@ -7,9 +7,6 @@
 Title: The Virus Strikes
 Description: Was it the radiation, biochemical weapons, or divine wrath? No one knows for certain. All that remains is a plague that turns the living into the walking dead.
 
-Title: Seven Days to Die
-Description: After infection, the virus claims its host in seven days. Death is only the beginning—soon after, the body reanimates, driven by a relentless hunger for blood.
-
 Title: Navezgane: Last Eden
 Description: Navezgane County, Arizona, one of the last true Edens, ironically carries a name that means “Killer of Monsters.” For centuries, the Apache roamed these lands. Now, something else does.
 
@@ -34,3 +31,6 @@ Description: The origin of the virus remains a mystery. Was it unleashed by war,
 
 Title: Navezgane's Dark Secret
 Description: Beneath the rugged terrain and towering mountains of Navezgane lies a secret. Something darker than war and more terrifying than death itself.
+
+Title: Seven Days to Die
+Description: After infection, the virus claims its host in seven days. Death is only the beginning—soon after, the body reanimates, driven by a relentless hunger for blood.
