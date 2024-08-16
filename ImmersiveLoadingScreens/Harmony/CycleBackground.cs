@@ -7,14 +7,16 @@ namespace ImmersiveLoadingScreens.Harmony
     [HarmonyPatch(typeof(XUiC_LoadingScreen), nameof(XUiC_LoadingScreen.Update))]
     public class CycleBackground
     {
-        private const double CycleIntervalSeconds = 7;
+        private const double CycleIntervalSeconds = 9;
         private const float FadeDurationSeconds = 1f;
+        private static readonly ILogger Logger = new Logger();
 
         private static DateTime _lastChangeTime = DateTime.Now;
-        private static int _currentBackgroundIndex;
-        private static int _currentTipIndex;
+        private static int _currentBackgroundIndex = UnityEngine.Random.Range(0, XUiC_LoadingScreen.backgrounds.Count);
+        private static int _currentTipIndex = UnityEngine.Random.Range(0, XUiC_LoadingScreen.tips.Count);
         private static bool _isFadingOut;
         private static float _fadeProgress;
+        private static bool _firstRun = true;
 
         public static bool Prefix(XUiC_LoadingScreen __instance, float _dt)
         {
@@ -22,6 +24,14 @@ namespace ImmersiveLoadingScreens.Harmony
             if (backgroundTextureView == null) return true;
 
             var timeSinceLastChange = (DateTime.Now - _lastChangeTime).TotalSeconds;
+
+            if (_firstRun)
+            {
+                InitializeBackgroundAndTip(__instance);
+                _firstRun = false;
+                _lastChangeTime = DateTime.Now;
+                return true;
+            }
 
             if (_isFadingOut)
             {
@@ -39,6 +49,12 @@ namespace ImmersiveLoadingScreens.Harmony
             return true;
         }
 
+        private static void InitializeBackgroundAndTip(XUiC_LoadingScreen instance)
+        {
+            UpdateBackgroundAndTip(instance);
+            instance.IsDirty = true;
+        }
+
         private static void HandleFadeOut(XUiC_LoadingScreen instance, XUiV_Texture backgroundTextureView, float _dt)
         {
             _fadeProgress += _dt / FadeDurationSeconds;
@@ -49,7 +65,7 @@ namespace ImmersiveLoadingScreens.Harmony
 
             if (!(_fadeProgress >= 1f)) return;
 
-            ChangeBackgroundAndTip(instance);
+            UpdateBackgroundAndTip(instance);
             _isFadingOut = false;
             _fadeProgress = 0;
             _lastChangeTime = DateTime.Now;
@@ -59,7 +75,6 @@ namespace ImmersiveLoadingScreens.Harmony
         {
             _isFadingOut = true;
             _fadeProgress = 0;
-            ChangeTip(instance);
         }
 
         private static void HandleFadeIn(XUiV_Texture backgroundTextureView, float dt)
@@ -71,21 +86,17 @@ namespace ImmersiveLoadingScreens.Harmony
                 Mathf.Lerp(0f, 1f, _fadeProgress));
         }
 
-        private static void ChangeBackgroundAndTip(XUiC_LoadingScreen instance)
+        private static void UpdateBackgroundAndTip(XUiC_LoadingScreen instance)
         {
             _currentBackgroundIndex = (_currentBackgroundIndex + 1) % XUiC_LoadingScreen.backgrounds.Count;
-            instance.currentBackground = XUiC_LoadingScreen.backgrounds[_currentBackgroundIndex];
-
             _currentTipIndex = (_currentTipIndex + 1) % XUiC_LoadingScreen.tips.Count;
+
+            instance.currentBackground = XUiC_LoadingScreen.backgrounds[_currentBackgroundIndex];
             instance.currentTipIndex = _currentTipIndex;
+
+            Logger.Info($"Tip index changed to {_currentTipIndex}");
 
             instance.IsDirty = true;
-        }
-
-        private static void ChangeTip(XUiC_LoadingScreen instance)
-        {
-            _currentTipIndex = (_currentTipIndex + 1) % XUiC_LoadingScreen.tips.Count;
-            instance.currentTipIndex = _currentTipIndex;
         }
     }
 }
