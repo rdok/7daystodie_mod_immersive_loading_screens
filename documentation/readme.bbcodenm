@@ -10,8 +10,20 @@ Replace immersion-breaking loading screens with dynamic backgrounds and immersiv
 [size=5]Features[/size]
 [list]
 [*] Replace immersion-breaking loading screens with dynamic backgrounds and immersive lore.
+[*] Optional mode file with lore snippets disabled. Install main or optional version; not both.
 [*] Game Version: 1.0. Install with [url=https://www.nexusmods.com/about/vortex/]Vortex[/url].
 [/list]
+[size=5]v1.0.0 Optional No Lore - 16-Aug-24[/size]
+[list]
+[*] feat: Hide lore snippets.[/list]
+[size=5]v1.3.1 16-Aug-24[/size]
+[list]
+[*] fix: Add more lore snippets:
+[list]
+[*] The fall of humanity 
+[*] Navezgane's Dark Secret
+[*] Seven Days to Die[/list]
+[*] fix: Revert image quality back to original; quality had degraded too much.[/list]
 [size=5]v1.2.0 15-Aug-24[/size]
 [list]
 [*] feat: Cycle through background images & tips every nine seconds.
