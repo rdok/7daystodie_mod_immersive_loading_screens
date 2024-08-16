@@ -14,7 +14,7 @@
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <ModName>ImmersiveLoadingScreensDebug</ModName>
-        <ModDescription>Eliminate immersion-breaking elements on loading screens.</ModDescription>
+        <ModDescription>Replace immersion-breaking loading screens with dynamic backgrounds and immersive lore.</ModDescription>
         <ModId>5716</ModId>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
