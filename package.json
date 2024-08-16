@@ -15,7 +15,8 @@
     "update:dependencies": "npm-check -u",
     "generate_readme": "node scripts/generate_readme.js",
     "generate_readme:watch": "nodemon --watch documentation -e md scripts/generate_readme.js",
-    "vignette": "node scripts/vignette.js"
+    "vignette": "node scripts/vignette.js",
+    "rdr2:filter": "node scripts/rdr2_loading_screen_filter.js"
   },
   "engines": {
     "node": "20"
