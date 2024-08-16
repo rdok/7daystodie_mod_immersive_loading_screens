@@ -11,6 +11,11 @@
 - Replace tips with lore-friendly messages that include snippets of the storyline.
 - Game Version: 1.0. Install with [Vortex](https://www.nexusmods.com/about/vortex/).
 
+## v1.2.0 15-Aug-24
+- feat: Cycle through background images & tips every nine seconds.
+- feat: Apply fade effect, of 1s duration, for a better UX.
+- feat: Use images with RDR2 loading screen filter (silver halide/wet collodion process)
+- feat: Add new lore snippet: The Origins of the outbreak.
 ## v1.1.0 15-Aug-24
 - feat: Replace starting loading screen with: "War. War never changes."
 - feat: Enables tips, and replace them with lore-friendly messages that include snippets of the storyline.
@@ -26,11 +31,12 @@
 - First loading screen message: 'In a world gone silent only the strong endure.'
 - Translates to all languages in game.
 
-## Backlog
-- Instead of hiding the loading messages of second loading screen, replace them with additional immersive messages. Similar to what was done with the first loading screen.
- 
 ## Development
 - Use Google Sheet to edit the Localization.txt
+
+## Sources
+- [silver halide or wet collodion process](https://www.reddit.com/r/reddeadredemption2/comments/asn805/the_load_screens_emulate_the_development_process/)
+- [RDR2 filters](https://x.com/radcowboylad/status/1307336588129566720?s=21)
 
 ***
 
