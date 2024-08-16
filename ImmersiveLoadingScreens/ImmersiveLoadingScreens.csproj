@@ -37,7 +37,7 @@
         <WarningLevel>3</WarningLevel>
         <OutputPath>bin\Main\</OutputPath>
         <AbsoluteOutputPath>$(MSBuildProjectDirectory)\$(OutputPath)</AbsoluteOutputPath>
-        <ModVersion>1.3.1</ModVersion>
+        <ModVersion>1.3.2</ModVersion>
         <ModName>ImmersiveLoadingScreens</ModName>
     </PropertyGroup>
 
@@ -49,7 +49,7 @@
         <WarningLevel>3</WarningLevel>
         <OutputPath>bin\NoLore\</OutputPath>
         <AbsoluteOutputPath>$(MSBuildProjectDirectory)\$(OutputPath)</AbsoluteOutputPath>
-        <ModVersion>1.0.0</ModVersion>
+        <ModVersion>1.0.1</ModVersion>
         <ModName>ImmersiveLoadingScreens_NoLore</ModName>
         <ModDescription>Replace immersion-breaking loading screens with dynamic backgrounds.</ModDescription>
     </PropertyGroup>

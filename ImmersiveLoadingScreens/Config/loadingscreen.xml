@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <doc>
 
-    <set xpath="/doc/backgrounds/tex[1]/@file">@modfolder:Textures/fog_forest.jpg</set>
-    <set xpath="/doc/backgrounds/tex[2]/@file">@modfolder:Textures/fog_forest_day.jpg</set>
-    <set xpath="/doc/backgrounds/tex[3]/@file">@modfolder:Textures/house.jpg</set>
-    <set xpath="/doc/backgrounds/tex[4]/@file">@modfolder:Textures/main_menu.jpg</set>
-    <set xpath="/doc/backgrounds/tex[5]/@file">@modfolder:Textures/zombie_scene_attack.jpg</set>
+    <remove xpath="/doc/backgrounds/*"/>
+    <append xpath="/doc/backgrounds">
+        <tex file="@modfolder:Textures/fog_forest.jpg"/>
+        <tex file="@modfolder:Textures/fog_forest_day.jpg"/>
+        <tex file="@modfolder:Textures/house.jpg"/>
+        <tex file="@modfolder:Textures/main_menu.jpg"/>
+        <tex file="@modfolder:Textures/zombie_scene_attack.jpg"/>
+        <tex file="@modfolder:Textures/buildings_destroyed.jpg"/>
+        <tex file="@modfolder:Textures/buildings_destroyed_01.jpg"/>
+        <tex file="@modfolder:Textures/forest.jpg"/>
+        <tex file="@modfolder:Textures/manor_front.jpg"/>
+        <tex file="@modfolder:Textures/manor_front_low.jpg"/>
+        <tex file="@modfolder:Textures/rekt_trader.jpg"/>
+    </append>
 
 
     <remove xpath="/doc/tips"/>
@@ -18,6 +27,11 @@
             <tip key="loading_screen_lore_friendly_navezgane_dark_secret"/>
             <tip key="loading_screen_lore_friendly_seven_days_to_die"/>
             <tip key="loading_screen_lore_friendly_the_price_of_war"/>
+            <tip key="loading_screen_lore_friendly_the_virus_strikes"/>
+            <tip key="loading_screen_lore_friendly_navezgane_last_eden"/>
+            <tip key="loading_screen_lore_friendly_the_savage_world"/>
+            <tip key="loading_screen_lore_friendly_the_living_dead"/>
+            <tip key="loading_screen_lore_friendly_monsters_among_us"/>
 
         </tips>
     </append>
