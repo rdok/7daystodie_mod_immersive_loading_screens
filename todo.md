@@ -19,9 +19,6 @@ Description: The world has become a desolate wasteland, overrun by the undead. A
 Title: The Price of War
 Description: The third world war left Earth in ruins, but the worst was yet to come. A virus, born from the ashes of devastation, now turns the remnants of humanity into the living dead.
 
-Title: Navezgane's Dark Secret
-Description: Beneath the rugged terrain and towering mountains of Navezgane lies a secret. Something darker than war and more terrifying than death itself.
-
 Title: The Living Dead
 Description: The virus is merciless. The infected do not stay dead for long. When they rise, they are no longer human—only mindless, bloodthirsty creatures remain.
 
@@ -35,3 +32,5 @@ Description: The third world war ravaged the Earth, but in 2013, nuclear devasta
 Title: Origins of the Outbreak
 Description: The origin of the virus remains a mystery. Was it unleashed by war, created by human hands, or is it something far darker? The truth lies buried in the aftermath.
 
+Title: Navezgane's Dark Secret
+Description: Beneath the rugged terrain and towering mountains of Navezgane lies a secret. Something darker than war and more terrifying than death itself.
