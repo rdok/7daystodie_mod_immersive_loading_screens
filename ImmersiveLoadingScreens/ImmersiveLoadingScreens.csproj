@@ -37,7 +37,7 @@
         <WarningLevel>3</WarningLevel>
         <OutputPath>bin\Main\</OutputPath>
         <AbsoluteOutputPath>$(MSBuildProjectDirectory)\$(OutputPath)</AbsoluteOutputPath>
-        <ModVersion>1.1.0</ModVersion>
+        <ModVersion>1.2.0</ModVersion>
         <ModName>ImmersiveLoadingScreens</ModName>
     </PropertyGroup>
 
