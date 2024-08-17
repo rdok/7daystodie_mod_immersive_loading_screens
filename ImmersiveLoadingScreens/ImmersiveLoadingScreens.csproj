@@ -108,26 +108,12 @@
         <XmlPoke XmlInputPath="$(OutputPath)\ModInfo.xml" Query="/xml/Website/@value"
                  Value="https://www.nexusmods.com/7daystodie/mods/$(ModId)"/>
 
-        <XmlPoke
-                XmlInputPath="$(OutputPath)\Config\XUi\windows.xml"
-                Query="/ImmersiveLoadingScreens/set[@xpath=&quot;//window[@name='mapArea']//sprite[@name='backgroundMain']/@color&quot;]"
-                Value="[black]"
-                Condition="'$(Configuration)' == 'DarkVersion'"
-        />
-
-        <XmlPoke
-                XmlInputPath="$(OutputPath)\Config\XUi\windows.xml"
-                Query="/ImmersiveLoadingScreens/set[@xpath=&quot;//window[@name='mapArea']//sprite[@name='backgroundMain']/@color&quot;]"
-                Value="[white]"
-                Condition="'$(Configuration)' == 'WhiteVersion'"
-        />
-
+        <Exec Command="npm run generate_readme" WorkingDirectory="$(MSBuildProjectDirectory)\.."/>
         <Exec
                 Condition=" '$(Configuration)' != 'Debug' "
                 Command="npm run build --prefix -- $(AbsoluteOutputPath) $(ModName) $(ModVersion)"
                 WorkingDirectory="$(MSBuildProjectDirectory)\.."
         />
-        <Exec Command="npm run generate_readme" WorkingDirectory="$(MSBuildProjectDirectory)\.."/>
     </Target>
 
 </Project>
