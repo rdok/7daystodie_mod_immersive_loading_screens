@@ -17,11 +17,12 @@ namespace ImmersiveLoadingScreens.Harmony
         private static bool _isFadingOut;
         private static float _fadeProgress;
         private static bool _firstRun = true;
-        private static bool _showTips = true; 
+        private static bool _showTips = true;
 
         public static bool Prefix(XUiC_LoadingScreen __instance, float _dt)
         {
-            var backgroundTextureView = __instance.backgroundTextureView;
+            var loadingScreen = __instance;
+            var backgroundTextureView = loadingScreen.backgroundTextureView;
             if (backgroundTextureView == null) return true;
             var timeSinceLastChange = (DateTime.Now - _lastChangeTime).TotalSeconds;
 #if NO_LORE
@@ -30,29 +31,34 @@ namespace ImmersiveLoadingScreens.Harmony
 
             if (_firstRun)
             {
-                InitializeBackground(__instance);
-                __instance.showTips = _showTips;
-                if (_showTips) InitializeTip(__instance);
+                InitializeBackground(loadingScreen);
+                loadingScreen.showTips = _showTips;
+                if (_showTips) InitializeTip(loadingScreen);
                 _firstRun = false;
                 _lastChangeTime = DateTime.Now;
                 return true;
             }
 
+
+            var presentationTimePassed = timeSinceLastChange >= CycleIntervalSeconds - FadeDurationSeconds;
+
             if (_isFadingOut)
             {
-                HandleFadeOut(__instance, backgroundTextureView, _dt);
+                HandleFadeOut(loadingScreen, backgroundTextureView, _dt);
+                return true;
             }
-            else if (timeSinceLastChange >= CycleIntervalSeconds - FadeDurationSeconds)
+
+            if (presentationTimePassed)
             {
-                StartFadeOut(__instance);
+                StartFadeOut(loadingScreen);
+                return true;
             }
-            else
-            {
-                HandleFadeIn(backgroundTextureView, _dt);
-            }
+
+            HandleFadeIn(loadingScreen, backgroundTextureView, _dt);
 
             return true;
         }
+
 
         private static void InitializeBackground(XUiC_LoadingScreen instance)
         {
@@ -66,7 +72,9 @@ namespace ImmersiveLoadingScreens.Harmony
             instance.IsDirty = true;
         }
 
-        private static void HandleFadeOut(XUiC_LoadingScreen instance, XUiV_Texture backgroundTextureView, float dt)
+        private static void HandleFadeOut(
+            XUiC_LoadingScreen loadingScreen, XUiV_Texture backgroundTextureView, float dt
+        )
         {
             _fadeProgress += dt / FadeDurationSeconds;
             backgroundTextureView.Color = new Color(backgroundTextureView.Color.r,
@@ -74,11 +82,14 @@ namespace ImmersiveLoadingScreens.Harmony
                 backgroundTextureView.Color.b,
                 Mathf.Lerp(1f, 0f, _fadeProgress));
 
+            if (_fadeProgress >= .1f)
+            {
+                HideTips(loadingScreen);
+            }
+
             if (!(_fadeProgress >= 1f)) return;
 
-            UpdateBackground(instance);
-            instance.showTips = _showTips;
-            if (_showTips) UpdateTip(instance);
+            UpdateBackground(loadingScreen);
             _isFadingOut = false;
             _fadeProgress = 0;
             _lastChangeTime = DateTime.Now;
@@ -90,13 +101,18 @@ namespace ImmersiveLoadingScreens.Harmony
             _fadeProgress = 0;
         }
 
-        private static void HandleFadeIn(XUiV_Texture backgroundTextureView, float dt)
+        private static void HandleFadeIn(XUiC_LoadingScreen loadingScreen, XUiV_Texture backgroundTextureView, float dt)
         {
             _fadeProgress += dt / FadeDurationSeconds;
             backgroundTextureView.Color = new Color(backgroundTextureView.Color.r,
                 backgroundTextureView.Color.g,
                 backgroundTextureView.Color.b,
                 Mathf.Lerp(0f, 1f, _fadeProgress));
+
+            if (_fadeProgress >= .1f)
+            {
+                ShowTips(loadingScreen);
+            }
         }
 
         private static void UpdateBackground(XUiC_LoadingScreen instance)
@@ -106,12 +122,27 @@ namespace ImmersiveLoadingScreens.Harmony
             instance.IsDirty = true;
         }
 
-        private static void UpdateTip(XUiC_LoadingScreen instance)
+        private static void HideTips(XUiC_LoadingScreen loadingScreen)
+        {
+            if (!_showTips || !loadingScreen.showTips) return;
+            loadingScreen.showTips = false;
+            loadingScreen.IsDirty = true;
+
+            CycleTips(loadingScreen);
+        }
+
+        private static void ShowTips(XUiC_LoadingScreen loadingScreen)
+        {
+            if (!_showTips || loadingScreen.showTips) return;
+            loadingScreen.showTips = true;
+            loadingScreen.IsDirty = true;
+        }
+
+        private static void CycleTips(XUiC_LoadingScreen loadingScreen)
         {
             _currentTipIndex = (_currentTipIndex + 1) % XUiC_LoadingScreen.tips.Count;
-            instance.currentTipIndex = _currentTipIndex;
+            loadingScreen.currentTipIndex = _currentTipIndex;
             Logger.Info($"Tip index changed to {_currentTipIndex}");
-            instance.IsDirty = true;
         }
     }
 }

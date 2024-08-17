@@ -37,7 +37,7 @@
         <WarningLevel>3</WarningLevel>
         <OutputPath>bin\Main\</OutputPath>
         <AbsoluteOutputPath>$(MSBuildProjectDirectory)\$(OutputPath)</AbsoluteOutputPath>
-        <ModVersion>1.3.2</ModVersion>
+        <ModVersion>1.3.3</ModVersion>
         <ModName>ImmersiveLoadingScreens</ModName>
     </PropertyGroup>
 
@@ -55,7 +55,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Harmony\CycleBackground.cs"/>
+        <Compile Include="Harmony\CycleBackground.cs" />
         <Compile Include="Harmony\Logger.cs"/>
         <Compile Include="Harmony\Main.cs"/>
         <Compile Include="Harmony\DisableTipsCycle.cs"/>
