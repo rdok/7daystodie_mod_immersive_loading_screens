@@ -1,5 +1,4 @@
 using HarmonyLib;
-using System;
 using UnityEngine;
 
 namespace ImmersiveLoadingScreens.Harmony
@@ -7,13 +6,13 @@ namespace ImmersiveLoadingScreens.Harmony
     [HarmonyPatch(typeof(XUiC_LoadingScreen), nameof(XUiC_LoadingScreen.Update))]
     public class CycleBackground
     {
-        private const double CycleIntervalSeconds = 9;
+        private const float CycleIntervalSeconds = 9f;
         private const float FadeDurationSeconds = 1f;
         private static readonly ILogger Logger = new Logger();
 
-        private static DateTime _lastChangeTime = DateTime.Now;
-        private static int _currentBackgroundIndex = UnityEngine.Random.Range(0, XUiC_LoadingScreen.backgrounds.Count);
-        private static int _currentTipIndex = UnityEngine.Random.Range(0, XUiC_LoadingScreen.tips.Count);
+        private static float _lastChangeTime;
+        private static int _currentBackgroundIndex = Random.Range(0, XUiC_LoadingScreen.backgrounds.Count);
+        private static int _currentTipIndex = Random.Range(0, XUiC_LoadingScreen.tips.Count);
         private static bool _isFadingOut;
         private static float _fadeProgress;
         private static bool _firstRun = true;
@@ -24,7 +23,9 @@ namespace ImmersiveLoadingScreens.Harmony
             var loadingScreen = __instance;
             var backgroundTextureView = loadingScreen.backgroundTextureView;
             if (backgroundTextureView == null) return true;
-            var timeSinceLastChange = (DateTime.Now - _lastChangeTime).TotalSeconds;
+
+            var timeSinceLastChange = Time.time - _lastChangeTime;
+
 #if NO_LORE
             _showTips = false;
 #endif
@@ -35,10 +36,9 @@ namespace ImmersiveLoadingScreens.Harmony
                 loadingScreen.showTips = _showTips;
                 if (_showTips) InitializeTip(loadingScreen);
                 _firstRun = false;
-                _lastChangeTime = DateTime.Now;
+                _lastChangeTime = Time.time;
                 return true;
             }
-
 
             var presentationTimePassed = timeSinceLastChange >= CycleIntervalSeconds - FadeDurationSeconds;
 
@@ -59,7 +59,6 @@ namespace ImmersiveLoadingScreens.Harmony
             return true;
         }
 
-
         private static void InitializeBackground(XUiC_LoadingScreen instance)
         {
             instance.currentBackground = XUiC_LoadingScreen.backgrounds[_currentBackgroundIndex];
@@ -72,27 +71,26 @@ namespace ImmersiveLoadingScreens.Harmony
             instance.IsDirty = true;
         }
 
-        private static void HandleFadeOut(
-            XUiC_LoadingScreen loadingScreen, XUiV_Texture backgroundTextureView, float dt
-        )
+        private static void HandleFadeOut(XUiC_LoadingScreen loadingScreen, XUiV_Texture backgroundTextureView,
+            float dt)
         {
             _fadeProgress += dt / FadeDurationSeconds;
-            backgroundTextureView.Color = new Color(backgroundTextureView.Color.r,
+            backgroundTextureView.Color = new Color(
+                backgroundTextureView.Color.r,
                 backgroundTextureView.Color.g,
                 backgroundTextureView.Color.b,
-                Mathf.Lerp(1f, 0f, _fadeProgress));
+                Mathf.Lerp(1f, 0f, _fadeProgress)
+            );
 
-            if (_fadeProgress >= .1f)
+            if (_fadeProgress >= 0.1f) HideTips(loadingScreen);
+
+            if (_fadeProgress >= 1f)
             {
-                HideTips(loadingScreen);
+                UpdateBackground(loadingScreen);
+                _isFadingOut = false;
+                _fadeProgress = 0;
+                _lastChangeTime = Time.time;
             }
-
-            if (!(_fadeProgress >= 1f)) return;
-
-            UpdateBackground(loadingScreen);
-            _isFadingOut = false;
-            _fadeProgress = 0;
-            _lastChangeTime = DateTime.Now;
         }
 
         private static void StartFadeOut(XUiC_LoadingScreen instance)
@@ -104,15 +102,14 @@ namespace ImmersiveLoadingScreens.Harmony
         private static void HandleFadeIn(XUiC_LoadingScreen loadingScreen, XUiV_Texture backgroundTextureView, float dt)
         {
             _fadeProgress += dt / FadeDurationSeconds;
-            backgroundTextureView.Color = new Color(backgroundTextureView.Color.r,
+            backgroundTextureView.Color = new Color(
+                backgroundTextureView.Color.r,
                 backgroundTextureView.Color.g,
                 backgroundTextureView.Color.b,
-                Mathf.Lerp(0f, 1f, _fadeProgress));
+                Mathf.Lerp(0f, 1f, _fadeProgress)
+            );
 
-            if (_fadeProgress >= .1f)
-            {
-                ShowTips(loadingScreen);
-            }
+            if (_fadeProgress >= 0.1f) ShowTips(loadingScreen);
         }
 
         private static void UpdateBackground(XUiC_LoadingScreen instance)

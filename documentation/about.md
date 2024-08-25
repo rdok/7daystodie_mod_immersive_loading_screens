@@ -12,6 +12,9 @@
 - [Danzo Hide Version](https://www.nexusmods.com/7daystodie/mods/5405) is recommended to hide the game version located on the top right of the screen.
 - Game Version: 1.0. Install with [Vortex](https://www.nexusmods.com/about/vortex/).
 
+#### v1.3.4 - v1.0.2 Optional No Lore - 24-Aug-24
+- fix: Potential minor improvement for when to cycle backgrounds using unity's engine time functions.
+- fix: Use latest improvements from v1.3.4 main version
 #### v1.3.3 17-Aug-24
 - fix: The text overlaps during the transition, making it difficult to read.
 #### v1.3.2 16-Aug-24
